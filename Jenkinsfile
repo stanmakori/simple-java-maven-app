@@ -1,11 +1,8 @@
-pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      steps {
-        sh 'sh \'mvn -B -DskipTests clean package\' '
-      }
-    }
-
-  }
+node{
+stage('SCM Checkout'){
+git 'https://github.com/stanmakori/simple-java-maven-app.git'
+}
+stage('Compile-Package'){
+sh 'mvn package'
+}
 }
