@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Compile system') {
       steps {
-        sh 'sh "${mvn}/bin/mvn package"'
+        sh 'sh "${mvn} package"'
       }
     }
 
