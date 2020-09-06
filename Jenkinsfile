@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Compile system') {
       steps {
-        sh 'sh \'mvn package\''
+        sh 'sh "/tmp/maven363/bin/mvn package"'
       }
     }
 
