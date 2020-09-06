@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('Compile system') {
       steps {
-        sh 'sh "/tmp/maven363/bin/mvn package"'
+        sh '''def mvnhome= tool name: "maven-3",type: "maven"
+sh "${mvnhome}/bin/mvn package"'''
       }
     }
 
