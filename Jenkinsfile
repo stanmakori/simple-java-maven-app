@@ -16,6 +16,12 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        junit '**/surefire-reports/**/*.xml'
+      }
+    }
+
   }
   tools {
     maven 'M3'
