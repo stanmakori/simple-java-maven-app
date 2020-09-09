@@ -26,4 +26,7 @@ pipeline {
   tools {
     maven 'M3'
   }
+  environment {
+    APP_NAME = 'Demo Maven Jenkins Pipeline'
+  }
 }
