@@ -17,8 +17,20 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        junit '**/surefire-reports/**/*.xml'
+      parallel {
+        stage('Test') {
+          steps {
+            junit '**/surefire-reports/**/*.xml'
+          }
+        }
+
+        stage('TestB') {
+          steps {
+            sh '''sleep 10
+echo "Done"'''
+          }
+        }
+
       }
     }
 
