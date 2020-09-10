@@ -34,6 +34,12 @@ echo "Done"'''
       }
     }
 
+    stage('End') {
+      steps {
+        catchError()
+      }
+    }
+
   }
   tools {
     maven 'M3'
