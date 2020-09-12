@@ -37,6 +37,7 @@ echo "Done"'''
     stage('End') {
       steps {
         catchError()
+        sh 'echo "Finished"'
       }
     }
 
