@@ -34,6 +34,12 @@ echo "Done"'''
       }
     }
 
+    stage('Confirm deploy to staging') {
+      steps {
+        input(message: 'Deploy to stage', ok: 'Approved. Go ahead')
+      }
+    }
+
   }
   tools {
     maven 'M3'
